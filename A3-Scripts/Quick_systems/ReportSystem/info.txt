@@ -1,0 +1,2 @@
+This Reportsystem will work so.
+The Cloud to the Database will maybe not work, because we dont have anyconnections to the @Life_Server!
