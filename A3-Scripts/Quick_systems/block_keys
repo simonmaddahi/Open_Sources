@@ -1,0 +1,7 @@
+
+case F1, F2, F3, F4, F5, F6, F7, F8, F9,F10,F11, F12
+if ((life_adminlevel == 0) && (_shift) || (_alt) exitWith {
+	hint format["Diese Tasten sind blockiert"];
+  //[1,format["ACHTUNG: %1 hat das Combatlogging versucht!", name player]] remoteExec ["life_fnc_broadcast",west,civilian,independent,east]; 
+	
+};
