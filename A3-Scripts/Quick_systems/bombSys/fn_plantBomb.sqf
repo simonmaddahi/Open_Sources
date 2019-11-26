@@ -23,10 +23,8 @@ if (_pin isEqualTo "") exitWith {hint "You need too enter a PIN";};
 if (_wire isEqualTo "") exitWith {hint "You need too choose a Wire";};
 if (_time isEqualTo "") exitWith {hint "You need too enter a time";};
 if (_time < 5) exitWith {hint "the minimum time is 5 Minutes";};
-if (playerside == civilian) then {
-    _time = "5"; //Minimum Timer 5 Minutes 
-};
 if (playerside == independent) exitWith {hint "You cant plant a Bomb!";};
+ _time = "5"; //Minimum Timer 5 Minutes 
 
 //toDo: Create Timer GUI
 [1, "A Bomb was planted on the following Cords: %1", _position] remoteExec ["life_fnc_Broadcast", 2];
