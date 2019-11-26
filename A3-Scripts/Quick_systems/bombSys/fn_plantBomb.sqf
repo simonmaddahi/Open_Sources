@@ -8,9 +8,9 @@ params [
         ["_control"],
         ["_pin","",[""]],
         ["_wire","",[""]],
-        ["_time","",[""]]
+        ["_time","",[""]],
+        ["_position"]
 ];
-private ["_position"];
 
 createDialog "NC_plantBomb";
 _control = findDisplay 100;
