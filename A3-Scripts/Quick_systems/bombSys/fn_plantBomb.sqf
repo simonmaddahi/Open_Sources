@@ -9,9 +9,10 @@ params [
         ["_pin","",[""]],
         ["_wire","",[""]],
         ["_time","",[""]],
-        ["_position"]
+        ["_position"],
+        ["_count","",[""]]
 ];
-
+if (_count >= 3) exitWith {hint "Es sind zu viele Bomben die deinen Fernzuender stoeren geplantet worden, Bitte warte bis sich die Anzahl an Bomben verringert!";};
 createDialog "NC_plantBomb";
 _control = findDisplay 100;
 _pin = _control ctrl 101;
@@ -27,6 +28,8 @@ if (playerside == independent) exitWith {hint "You cant plant a Bomb!";};
  _time = "5"; //Minimum Timer 5 Minutes 
 
 //toDo: Create Timer GUI
+_bombMarker = createMarker ["ATTENTION: BOMB PLANTED", player];
+_bombMarker = setMarkerColor "ColorBlack";
 [1, "A Bomb was planted on the following Cords: %1", _position] remoteExec ["life_fnc_Broadcast", 2];
 
 [_pin, _wire, _time] remoteExec ["life_fnc_defuseBomb", 1];
