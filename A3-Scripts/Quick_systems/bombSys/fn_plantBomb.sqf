@@ -32,4 +32,5 @@ _bombMarker = createMarker ["ATTENTION: BOMB PLANTED", player];
 _bombMarker = setMarkerColor "ColorBlack";
 [1, "A Bomb was planted on the following Cords: %1", _position] remoteExec ["life_fnc_Broadcast", 2];
 _count++;
-[_pin, _wire, _time] remoteExec ["life_fnc_defuseBomb", 1];
+[_time] remoteExec ["life_fnc_handleBomb", 1];
+[_pin,_wire,_time] remoteExec ["life_fnc_defuseBomb", 1];
