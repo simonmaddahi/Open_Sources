@@ -12,11 +12,8 @@ _display = findDisplay 105;
 _enterPin = _display ctrl 106;
 _clickedWire = _display ctrl 107;
 
-if (_pin != _enterPin) exitWith {
+if ((_pin != _enterPin) || (_wire != _clickedWire)) exitWith {
   [1] spawn life_fnc_handleBomb;
-};
-if (_wire != _clickedWire) exitWith {
-    [1] spawn life_fnc_handleBomb;
 };
 
 if ((_pin == _enterPin) || (_clickedWire == _wire)) exitWith {
