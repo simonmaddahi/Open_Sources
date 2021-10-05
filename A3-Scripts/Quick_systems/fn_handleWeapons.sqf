@@ -22,14 +22,14 @@ private _lv_modWeap =
 
 if((GV_sks_weaponRec >= 5) && GV_sks_weaponRec <= 8) {
    player setUnitRecoilCoefficient 0.8;
-} else if((GV_sks_weaponRec >= 9) && GV_sks_weaponRec <= 12) {
+} else if(GV_sks_weaponRec >= 9)) {
    player setUnitRecoilCoefficient 0.8;
 };
 
 
 if((GV_sks_weaponRel >= 5) && GV_sks_weaponRel <= 8) {
    player setAnimSpeedCoef 0.75;
-} else if((GV_sks_weaponRel >= 9) && GV_sks_weaponRel <= 12) {
+} else if(GV_sks_weaponRel >= 9) {
    player setAnimSpeedCoef 1.2;
 } else if(GV_sks_weaponRel >= 20) {
    player setAnimSpeedCoef 2;
