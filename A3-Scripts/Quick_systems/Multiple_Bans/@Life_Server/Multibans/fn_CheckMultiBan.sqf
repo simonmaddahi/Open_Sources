@@ -20,3 +20,5 @@ player setVariable["BANNED", false, false];
 
 //_queryResult;
 player setVariable["BANNED", false, true];
+
+//Eventuell hier END MISSION einbauen und das ganze nur Abrufen?
