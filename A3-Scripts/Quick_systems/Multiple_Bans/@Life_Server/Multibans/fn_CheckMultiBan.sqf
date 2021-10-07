@@ -19,4 +19,4 @@ player setVariable["BANNED", false, false];
 };
 
 //_queryResult;
-player setVariable["BANNED", true, true];
+player setVariable["BANNED", false, true];
