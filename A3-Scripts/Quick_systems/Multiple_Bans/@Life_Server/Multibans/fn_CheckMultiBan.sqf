@@ -15,11 +15,11 @@ private _query = format ["SELECT banID, playername, playerid, playerguid, durati
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if (count _queryResult isEqualTo 0) exitWith {
-player setVariable["BANNED", false, false];
+player setVariable["BANNED", false, true];
 };
 
 //_queryResult;
-player setVariable["BANNED", false, true];
+player setVariable["BANNED", true, true];
 /*
     //EnbMission innerhalb lifeserver (performanter)
     
