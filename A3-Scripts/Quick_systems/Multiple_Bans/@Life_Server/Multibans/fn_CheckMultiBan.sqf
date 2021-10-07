@@ -6,17 +6,17 @@
     Queries to check if player is banned?!
 */
 
-private _query = format ["SELECT id, playerID, playerGUID, duration, reason, bannedBy FROM bans WHERE AND playerGUID LIKE '%1'",getPlayerUID player];
+private _unit = param [0,objNull,[objNull]];
+
+if (isNull _unit) exitWith {[]};
+
+private _uid = getPlayerUID _unit;
+private _query = format ["SELECT banID, playername, playerid, playerguid, duration, reason FROM multiple_bans WHERE active='1' AND playerguid='%1'",_uid];
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
-if !(count _queryResult isEqualTo 0) then {
-    _tmp = [_queryResult select 5] call DB_fnc_mresToArray;
-    
-    player setVariable["PlayerIsBanned",true, true];
-    
-    if (_tmp isEqualType "") then {_tmp = call compile format ["%1", _tmp];};
-    _queryResult set[5, _tmp];
-} else {
-  player setVariable["PlayerisBanned", false, false];
+if (count _queryResult isEqualTo 0) exitWith {
+player setVariable["BANNED", false, false];
 };
 
+//_queryResult;
+player setVariable["BANNED", true, true];
