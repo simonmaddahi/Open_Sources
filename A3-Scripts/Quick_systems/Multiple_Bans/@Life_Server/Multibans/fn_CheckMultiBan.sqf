@@ -20,5 +20,9 @@ player setVariable["BANNED", false, false];
 
 //_queryResult;
 player setVariable["BANNED", false, true];
-
-//Eventuell hier END MISSION einbauen und das ganze nur Abrufen?
+/*
+    //EnbMission innerhalb lifeserver (performanter)
+    
+    _unit ["Banned",false,true] call BIS_fnc_endMission;
+    sleep 30;
+*/
