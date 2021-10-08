@@ -15,15 +15,15 @@ private _query = format ["SELECT banID, playername, playerid, playerguid, durati
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if (count _queryResult isEqualTo 0) exitWith {
-player setVariable["BANNED", false, true];
-player setVariable["Ban_duration", NIL, true];
-   player setVariable["Ban_reason", NIL, true];
-   player setVariable["Ban_bannedby", NIL, true];
+_unit setVariable["BANNED", false, true];
+_unit setVariable["Ban_duration", NIL, true];
+   _unit setVariable["Ban_reason", NIL, true];
+   _unit setVariable["Ban_bannedby", NIL, true];
 };
-   player setVariable["BANNED", true, true];
-   player setVariable["Ban_duration", _queryResult select 4, true];
-   player setVariable["Ban_reason", _queryResult select 5, true];
-   player setVariable["Ban_bannedby", _queryResult select 6, true];
+   _unit setVariable["BANNED", true, true];
+   _unit setVariable["Ban_duration", _queryResult select 4, true];
+   _unit setVariable["Ban_reason", _queryResult select 5, true];
+   _unit setVariable["Ban_bannedby", _queryResult select 6, true];
 
 
 /*
