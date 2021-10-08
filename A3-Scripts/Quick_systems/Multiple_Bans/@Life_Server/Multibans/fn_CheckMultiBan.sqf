@@ -23,7 +23,7 @@ player setVariable["BANNED", true, true];
     //Param Übergabe für kick player
     //fn_mresString.sqf get Value of DB - Push to String
     
-    [_queryResult select 4, _queryResult select 5, _queryResult select 6] remoteExec ["fn_KickPlayer.sqf",RSERV];
+ //   [_queryResult select 4, _queryResult select 5, _queryResult select 6] remoteExec ["SCRIPTFILE",RSERV];
     
 
 
