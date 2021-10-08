@@ -16,6 +16,9 @@ private _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if (count _queryResult isEqualTo 0) exitWith {
 player setVariable["BANNED", false, true];
+player setVariable["Ban_duration", NIL, true];
+   player setVariable["Ban_reason", NIL, true];
+   player setVariable["Ban_bannedby", NIL, true];
 };
 
 //_queryResult;
@@ -23,9 +26,9 @@ player setVariable["BANNED", true, true];
     //Param Übergabe für kick player
     //fn_mresString.sqf get Value of DB - Push to String
     
- //   [_queryResult select 4, _queryResult select 5, _queryResult select 6] remoteExec ["SCRIPTFILE",RSERV];
-    
-
+   player setVariable["Ban_duration", _queryResult select 4, true];
+   player setVariable["Ban_reason", _queryResult select 5, true];
+   player setVariable["Ban_bannedby", _queryResult select 6, true];
 
 
 /*
