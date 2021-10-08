@@ -20,12 +20,7 @@ player setVariable["Ban_duration", NIL, true];
    player setVariable["Ban_reason", NIL, true];
    player setVariable["Ban_bannedby", NIL, true];
 };
-
-//_queryResult;
-player setVariable["BANNED", true, true];
-    //Param Übergabe für kick player
-    //fn_mresString.sqf get Value of DB - Push to String
-    
+   player setVariable["BANNED", true, true];
    player setVariable["Ban_duration", _queryResult select 4, true];
    player setVariable["Ban_reason", _queryResult select 5, true];
    player setVariable["Ban_bannedby", _queryResult select 6, true];
